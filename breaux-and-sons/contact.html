@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Breaux & Sons</title>
+    <link rel="stylesheet" href="./css/global.css">
+</head>
+<body class="bg-neutral-950 text-neutral-200 flex flex-col min-h-screen">
+    <header class="bg-neutral-950 text-white border-b border-neutral-800 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="./index.html" class="text-xl font-bold tracking-widest uppercase text-white">BR<span class="text-amber-600">&</span>S</a>
+                </div>
+                <!-- Desktop Nav -->
+                <div class="hidden md:block desktop-nav">
+                    <nav class="flex items-baseline space-x-6 text-sm font-medium tracking-wide uppercase">
+                        <a href="./mechanic.html" class="text-neutral-400 hover:text-amber-600 transition-colors">Mechanic</a>
+                        <a href="./carpentry.html" class="text-neutral-400 hover:text-amber-600 transition-colors">Carpentry</a>
+                        <a href="./webdev.html" class="text-neutral-400 hover:text-amber-600 transition-colors">Web Dev</a>
+                        <a href="./fightnet.html" class="text-neutral-400 hover:text-amber-600 transition-colors">Fightnet</a>
+                        <a href="./resume.html" class="text-neutral-400 hover:text-amber-600 transition-colors">Resume</a>
+                        <a href="./investor.html" class="text-neutral-400 hover:text-amber-600 transition-colors">Investors</a>
+                        <a href="./contact.html" class="bg-amber-600 text-neutral-950 px-4 py-2 rounded-sm hover:bg-amber-500 transition-colors">Contact</a>
+                    </nav>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-neutral-400 hover:text-white focus:outline-none p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-neutral-950/80 backdrop-blur-sm z-40 md:hidden"></div>
+    <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-neutral-900 border-r border-neutral-800 z-50 md:hidden flex flex-col shadow-2xl">
+        <div class="flex items-center justify-between p-4 border-b border-neutral-800">
+            <span class="text-xl font-bold tracking-widest uppercase text-white">Menu</span>
+            <button id="mobile-menu-close" class="text-neutral-400 hover:text-white focus:outline-none p-2">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        <nav class="flex-1 px-4 py-6 space-y-4 text-sm font-medium tracking-wide uppercase mobile-nav-links flex flex-col">
+            <a href="./index.html" class="block text-neutral-400 hover:text-amber-600 transition-colors">Home</a>
+            <a href="./mechanic.html" class="block text-neutral-400 hover:text-amber-600 transition-colors">Mechanic</a>
+            <a href="./carpentry.html" class="block text-neutral-400 hover:text-amber-600 transition-colors">Carpentry</a>
+            <a href="./webdev.html" class="block text-neutral-400 hover:text-amber-600 transition-colors">Web Dev</a>
+            <a href="./fightnet.html" class="block text-neutral-400 hover:text-amber-600 transition-colors">Fightnet</a>
+            <a href="./resume.html" class="block text-neutral-400 hover:text-amber-600 transition-colors">Resume</a>
+            <a href="./investor.html" class="block text-neutral-400 hover:text-amber-600 transition-colors">Investors</a>
+            <a href="./contact.html" class="block text-neutral-400 hover:text-amber-600 transition-colors bg-neutral-800 p-2 rounded-sm text-center border border-neutral-700 mt-4">Contact</a>
+        </nav>
+    </div>
+
+    <main class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-grow w-full animate-fade-in">
+        <h1 class="text-4xl font-extrabold tracking-tighter text-white mb-6 uppercase">Initiate Contact</h1>
+        
+        <form id="contact-form" class="bg-neutral-900 border border-neutral-800 p-8 rounded-sm">
+            <div class="mb-6">
+                <label class="block text-neutral-400 text-sm font-bold uppercase tracking-widest mb-2" for="name">ID / Name</label>
+                <input class="w-full bg-neutral-950 border border-neutral-700 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-amber-600 transition-colors" type="text" id="name" placeholder="John Doe" required>
+            </div>
+            <div class="mb-6">
+                <label class="block text-neutral-400 text-sm font-bold uppercase tracking-widest mb-2" for="email">Comms / Email</label>
+                <input class="w-full bg-neutral-950 border border-neutral-700 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-amber-600 transition-colors" type="email" id="email" placeholder="john@example.com" required>
+            </div>
+            <div class="mb-6">
+                <label class="block text-neutral-400 text-sm font-bold uppercase tracking-widest mb-2" for="work-type">Type of Work Needed</label>
+                <select id="work-type" class="w-full bg-neutral-950 border border-neutral-700 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-amber-600 transition-colors" required>
+                    <option value="" disabled selected>Select specific division</option>
+                    <option value="Automotive / Mechanic">Automotive / Mechanic</option>
+                    <option value="Structural Carpentry">Structural Carpentry</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Network / Fightnet">Network / Security (Fightnet)</option>
+                    <option value="Other">Other / General</option>
+                </select>
+            </div>
+            <div class="mb-6">
+                <label class="block text-neutral-400 text-sm font-bold uppercase tracking-widest mb-2" for="work-details">Scope of Work</label>
+                <select id="work-details" class="w-full bg-neutral-950 border border-neutral-700 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-amber-600 transition-colors" required>
+                    <option value="" disabled selected>Select scope details</option>
+                    <option value="General Quote Request">General Quote Request</option>
+                    <option value="Urgent Assistance">Urgent Assistance Needed</option>
+                    <option value="Project Evaluation">Project Evaluation / Survey</option>
+                    <option value="Long Term Contract">Long Term Contract / Consulting</option>
+                </select>
+            </div>
+            <div class="mb-8">
+                <label class="block text-neutral-400 text-sm font-bold uppercase tracking-widest mb-2" for="message">Transmission</label>
+                <textarea class="w-full bg-neutral-950 border border-neutral-700 text-white px-4 py-3 rounded-sm h-32 resize-none focus:outline-none focus:border-amber-600 transition-colors" id="message" placeholder="Provide additional details regarding the project..." required></textarea>
+            </div>
+            <button type="submit" class="w-full bg-amber-600 text-neutral-950 font-bold uppercase tracking-widest py-4 px-8 rounded-sm hover:bg-amber-500 transition-colors font-mono">Submit Data</button>
+        </form>
+
+        <script>
+            document.getElementById('contact-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const workType = document.getElementById('work-type').value;
+                const workDetails = document.getElementById('work-details').value;
+                const message = document.getElementById('message').value;
+
+                const subject = encodeURIComponent(`Inquiry for ${workType}: ${workDetails}`);
+                const body = encodeURIComponent(
+`Client Name: ${name}
+Reply to: ${email}
+Type of Work: ${workType}
+Scope of Work: ${workDetails}
+
+Message details:
+${message}`
+                );
+
+                window.location.href = `mailto:dfbreauxjr@gmail.com?subject=${subject}&body=${body}`;
+            });
+        </script>
+    </main>
+
+    <footer class="border-t border-neutral-800 mt-auto py-10 text-center">
+        <p class="text-neutral-600 text-sm tracking-widest uppercase">&copy; 2026 Breaux & Sons.</p>
+    </footer>
+
+    <script type="module" src="./js/app.js"></script>
+</body>
+</html>
