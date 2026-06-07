@@ -12,7 +12,10 @@
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <a href="./index.html" class="text-xl font-bold tracking-widest uppercase text-white">BR<span class="text-amber-600">&</span>S</a>
+                    <a href="./index.html" class="flex items-center gap-3">
+                        <img src="./assets/images/logo.png" alt="Breaux & Sons Logo" class="h-10 w-10 object-contain rounded-sm border border-neutral-800">
+                        <span class="text-xl font-bold tracking-widest uppercase text-white hidden sm:block">BR<span class="text-amber-600">&</span>S</span>
+                    </a>
                 </div>
                 <!-- Desktop Nav -->
                 <div class="hidden md:block desktop-nav">
@@ -40,7 +43,10 @@
     <div id="mobile-menu-overlay" class="fixed inset-0 bg-neutral-950/80 backdrop-blur-sm z-40 md:hidden"></div>
     <div id="mobile-menu" class="fixed inset-y-0 left-0 w-64 bg-neutral-900 border-r border-neutral-800 z-50 md:hidden flex flex-col shadow-2xl">
         <div class="flex items-center justify-between p-4 border-b border-neutral-800">
-            <span class="text-xl font-bold tracking-widest uppercase text-white">Menu</span>
+            <a href="./index.html" class="flex items-center gap-3">
+                <img src="./assets/images/logo.png" alt="Breaux & Sons Logo" class="h-8 w-8 object-contain rounded-sm border border-neutral-800">
+                <span class="text-lg font-bold tracking-widest uppercase text-white">Menu</span>
+            </a>
             <button id="mobile-menu-close" class="text-neutral-400 hover:text-white focus:outline-none p-2">
                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
