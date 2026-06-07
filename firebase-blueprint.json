@@ -1,0 +1,42 @@
+{
+  "entities": {
+    "Inquiry": {
+      "title": "Inquiry",
+      "description": "A contact inquiry from a user",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "User's name"
+        },
+        "email": {
+          "type": "string",
+          "description": "User's email"
+        },
+        "workType": {
+          "type": "string",
+          "description": "Type of work"
+        },
+        "workDetails": {
+          "type": "string",
+          "description": "Scope of work"
+        },
+        "message": {
+          "type": "string",
+          "description": "Message content"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp of creation"
+        }
+      },
+      "required": ["name", "email", "workType", "workDetails", "message", "createdAt"]
+    }
+  },
+  "firestore": {
+    "inquiries/{inquiryId}": {
+      "schema": "Inquiry",
+      "description": "User inquiries"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isValidInquiry(data) {
+      return data.keys().hasAll(['name', 'email', 'workType', 'workDetails', 'message', 'createdAt']) &&
+             data.keys().size() == 6 &&
+             data.name is string && data.name.size() > 0 && data.name.size() <= 200 &&
+             data.email is string && data.email.size() > 0 && data.email.size() <= 200 &&
+             data.workType is string && data.workType.size() > 0 && data.workType.size() <= 100 &&
+             data.workDetails is string && data.workDetails.size() > 0 && data.workDetails.size() <= 100 &&
+             data.message is string && data.message.size() > 0 && data.message.size() <= 5000 &&
+             data.createdAt == request.time;
+    }
+
+    match /inquiries/{inquiryId} {
+      allow read: if false;
+      allow update, delete: if false;
+      allow create: if isValidId(inquiryId) && isValidInquiry(incoming());
+    }
+  }
+}
